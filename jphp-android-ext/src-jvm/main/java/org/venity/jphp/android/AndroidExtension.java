@@ -2,6 +2,7 @@ package org.venity.jphp.android;
 
 import android.app.Activity;
 import android.app.Application;
+import android.app.Dialog;
 import android.app.Notification;
 import android.content.Context;
 import android.view.View;
@@ -9,9 +10,11 @@ import android.view.ViewGroup;
 import android.widget.*;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
+import org.venity.jphp.android.classes.WrapKeyCodes;
 import org.venity.jphp.android.classes.WrapR;
 import org.venity.jphp.android.classes.app.WrapActivity;
 import org.venity.jphp.android.classes.app.WrapApplication;
+import org.venity.jphp.android.classes.app.WrapDialog;
 import org.venity.jphp.android.classes.content.WrapContext;
 import org.venity.jphp.android.classes.notification.WrapNotification;
 import org.venity.jphp.android.classes.notification.WrapNotificationBuilder;
@@ -47,7 +50,7 @@ public class AndroidExtension extends Extension {
 
     @Override
     public String getVersion() {
-        return "2.1.0 " + getStatus().toString();
+        return "2.2.0 " + getStatus().toString();
     }
 
     @Override
@@ -55,12 +58,14 @@ public class AndroidExtension extends Extension {
         System.out.println("jPHP for android version: " + getVersion());
 
         // classes
-        registerClass(scope, WrapR.class);
+        registerClass(scope, WrapR.class, WrapKeyCodes.class);
+
         registerWrapperClass(scope, Context.class, WrapContext.class);
         registerWrapperClass(scope, View.class, WrapView.class);
         registerWrapperClass(scope, ViewGroup.class, WrapViewGroup.class);
         registerWrapperClass(scope, Application.class, WrapApplication.class);
         registerWrapperClass(scope, Activity.class, WrapActivity.class);
+        registerWrapperClass(scope, Dialog.class, WrapDialog.class);
 
         registerWrapperClass(scope, TextView.class, WrapTextView.class);
         registerWrapperClass(scope, Button.class, WrapButton.class);
