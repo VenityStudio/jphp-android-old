@@ -48,16 +48,16 @@ class AndroidPlugin
         fs::makeFile("./build.gradle");
         fs::makeFile("./src/main/jphp/index.php");
 
-        $sdk = $_ENV["android.build.sdk"] ?: Console::read("sdkVersion :", 28);
+        $sdk = $GLOBALS["argv"][4] ?: Console::read("sdkVersion :", 28);
 
         $settings = [
             "compileSdkVersion" => $sdk,
-            "buildToolsVersion" => $_ENV["android.build.tools"] ?: Console::read("buildToolsVersion :", "28.0.3"),
+            "buildToolsVersion" => $GLOBALS["argv"][5] ?: Console::read("buildToolsVersion :", "28.0.3"),
             "targetSdkVersion" => $sdk,
-            "appName" => $_ENV["android.app.name"] ?: Console::read("App name :", "test"),
-            "applicationId" => $_ENV["android.app.id"] ?: Console::read("applicationId :", "org.venity.test"),
-            "versionCode" => $_ENV["android.version.code"] ?: (int) Console::read("versionCode :", 1),
-            "versionName" => $_ENV["android.version.name"] ?: Console::read("versionName :", "1.0"),
+            "appName" => $GLOBALS["argv"][2] ?: Console::read("App name :", "test"),
+            "applicationId" => $GLOBALS["argv"][3] ?: Console::read("applicationId :", "org.venity.test"),
+            "versionCode" => $GLOBALS["argv"][6] ?: (int) Console::read("versionCode :", 1),
+            "versionName" => $GLOBALS["argv"][7] ?: Console::read("versionName :", "1.0"),
         ];
 
         $script = Stream::getContents("res://android/build.groovy");

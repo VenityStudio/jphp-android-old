@@ -5,7 +5,7 @@
 
 **Child Classes**
 
-> [ImageView](classes/php/android/widget/ImageView.md), [TextView](classes/php/android/widget/TextView.md), [CheckBox](classes/php/android/widget/CheckBox.md), [ViewGroup](classes/php/android/view/ViewGroup.md)
+> [ViewGroup](classes/php/android/view/ViewGroup.md), [CheckBox](classes/php/android/widget/CheckBox.md), [TextView](classes/php/android/widget/TextView.md), [ImageView](classes/php/android/widget/ImageView.md)
 
 ---
 
