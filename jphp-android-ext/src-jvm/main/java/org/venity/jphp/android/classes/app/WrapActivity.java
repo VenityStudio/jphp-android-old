@@ -1,8 +1,7 @@
 package org.venity.jphp.android.classes.app;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.View;
 import org.venity.jphp.android.AndroidExtension;
 import org.venity.jphp.android.classes.content.WrapContext;
@@ -31,27 +30,14 @@ public class WrapActivity extends WrapContext {
     }
 
     @Reflection.Signature
-    public void __construct()
-    {
-        __wrappedObject = new JPHPActivity();
-    }
-
-    @Reflection.Signature
-    public void setTitle(String title)
-    {
-        getWrappedObject().setTitle(title);
+    public void __construct() {
+        throw new RuntimeException("Unable to create Activity");
     }
 
     @Reflection.Signature
     public void setTitleById(int id)
     {
         getWrappedObject().setTitle(id);
-    }
-
-    @Reflection.Signature
-    public void setContentView(View view)
-    {
-        getWrappedObject().setContentView(view);
     }
     
     @Reflection.Signature
@@ -61,6 +47,7 @@ public class WrapActivity extends WrapContext {
     }
 
     @Reflection.Signature
+    @Deprecated
     public View findById(int id)
     {
         return getWrappedObject().findViewById(id);
@@ -99,5 +86,31 @@ public class WrapActivity extends WrapContext {
     public void setOnKeyShortcut(Invoker invoker) {
         ((JPHPActivity) __wrappedObject).onKeyShortcut =
                 keyCode -> invoker.callNoThrow(new LongMemory((long) keyCode)).toBoolean();
+    }
+
+    @Reflection.Signature
+    public void runOnUiThread(Invoker callback) {
+        getWrappedObject().runOnUiThread(() -> callback.callNoThrow(Memory.NULL));
+    }
+
+    interface WrappedInterface {
+        View getCurrentFocus();
+        boolean requestWindowFeature(int featureId);
+        void setFeatureDrawableResource(int featureId, int resId);
+        void setFeatureDrawableAlpha(int featureId, int alpha);
+        LayoutInflater getLayoutInflater();
+        void setTitle(CharSequence title);
+        void setContentView(View view);
+        void findViewById(int id);
+        void setTitleColor(int textColor);
+        CharSequence getTitle();
+        int getTitleColor();
+        void setProgressBarVisibility(boolean visible);
+        void setProgressBarIndeterminateVisibility(boolean visible);
+        void setProgressBarIndeterminate(boolean indeterminate);
+        void setProgress(int progress);
+        void setSecondaryProgress(int secondaryProgress);
+        void setVolumeControlStream(int streamType);
+        int getVolumeControlStream();
     }
 }

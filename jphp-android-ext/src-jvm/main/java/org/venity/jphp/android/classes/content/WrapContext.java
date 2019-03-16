@@ -18,4 +18,10 @@ public class WrapContext extends BaseWrapper<Context> {
     public WrapContext(Environment env, ClassEntity clazz) {
         super(env, clazz);
     }
+
+    interface WrappedInterface {
+        String getString(int resId);
+
+
+    }
 }

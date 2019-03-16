@@ -1,10 +1,10 @@
 ## jphp-android-ext
-> version 2.1.1, created by JPPM.
+> version 2.1.2, created by JPPM.
 
 
 ### Install
 ```
-jppm add jphp-android-ext@2.1.1
+jppm add jphp-android-ext@2.1.2
 ```
 
 ### API
@@ -28,6 +28,7 @@ jppm add jphp-android-ext@2.1.1
 
 - [`ViewGroup`](classes/php/android/view/ViewGroup.md)
 - [`View`](classes/php/android/view/View.md)
+- [`LayoutInflater`](classes/php/android/view/LayoutInflater.md)
 
 #### `php\android`
 

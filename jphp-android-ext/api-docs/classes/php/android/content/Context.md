@@ -6,3 +6,19 @@
 **Child Classes**
 
 > [Activity](classes/php/android/app/Activity.md)
+
+---
+
+#### Methods
+
+- `->`[`getString()`](#method-getstring)
+
+---
+# Methods
+
+<a name="method-getstring"></a>
+
+### getString()
+```php
+getString(int $resId): string
+```

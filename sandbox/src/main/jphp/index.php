@@ -5,15 +5,16 @@ use php\android\R;
 use php\android\widget\TextView;
 use php\android\notification\Notification;
 use php\android\notification\NotificationBuilder;
-use php\android\widget\ImageView;
-use php\android\picasso\Picasso;
 
 Application::setMainActivityHandler(function () {
     $activity = Application::getMainActivity();
+    $activity->setTitle($activity->getString(R::string("app_name")));
     $activity->setContentViewById(R::layout("activity_main"));
 
-    $textView = $activity->findById(R::id("text"));
+    $textView = $activity->findViewById(R::id("text"));
     $textView->on("click", function (TextView $view) use ($activity) {
+        $view->textSize++;
+
         Notification::notify((new NotificationBuilder($activity))
             ->setAutoCancel(true)
             ->setContentTitle("jPFA Test")

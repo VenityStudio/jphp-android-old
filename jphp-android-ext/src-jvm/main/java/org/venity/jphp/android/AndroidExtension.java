@@ -5,6 +5,7 @@ import android.app.Application;
 import android.app.Dialog;
 import android.app.Notification;
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
@@ -20,6 +21,7 @@ import org.venity.jphp.android.classes.notification.WrapNotification;
 import org.venity.jphp.android.classes.notification.WrapNotificationBuilder;
 import org.venity.jphp.android.classes.picasso.WrapPicasso;
 import org.venity.jphp.android.classes.picasso.WrapRequestCreator;
+import org.venity.jphp.android.classes.view.WrapLayoutInflater;
 import org.venity.jphp.android.classes.view.WrapView;
 import org.venity.jphp.android.classes.view.WrapViewGroup;
 import org.venity.jphp.android.classes.widget.*;
@@ -50,7 +52,7 @@ public class AndroidExtension extends Extension {
 
     @Override
     public String getVersion() {
-        return "2.2.0 " + getStatus().toString();
+        return "2.2.2 " + getStatus().toString();
     }
 
     @Override
@@ -63,6 +65,7 @@ public class AndroidExtension extends Extension {
         registerWrapperClass(scope, Context.class, WrapContext.class);
         registerWrapperClass(scope, View.class, WrapView.class);
         registerWrapperClass(scope, ViewGroup.class, WrapViewGroup.class);
+        registerWrapperClass(scope, LayoutInflater.class, WrapLayoutInflater.class);
         registerWrapperClass(scope, Application.class, WrapApplication.class);
         registerWrapperClass(scope, Activity.class, WrapActivity.class);
         registerWrapperClass(scope, Dialog.class, WrapDialog.class);
