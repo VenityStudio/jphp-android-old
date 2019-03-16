@@ -1,6 +1,7 @@
 # The JPHP for Android Project 
 [![Build Status](https://travis-ci.org/VenityStudio/jphp-android.svg?branch=dev)](https://travis-ci.org/VenityStudio/jphp-android)
 [![Venity project status](https://img.shields.io/badge/Venity-official-blue.svg)](https://vk.com/venity)
+[![Donate](https://img.shields.io/static/v1.svg?label=qiwi&message=donate&color=orange)](https://qiwi.com/p/375255244987)
 > Tools and libraries for building android apps on jphp
 
 ## How it works ?
