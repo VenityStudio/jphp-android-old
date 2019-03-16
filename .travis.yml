@@ -19,4 +19,4 @@ script:
   - "cd sandbox && jppm update"
   - "jppm android:installGradle"
   - "jppm android:compile --packageDebug"
-  - "cd .. && jppm hubBuild \"yousan4k@gmail.com\" $AUTH"
+#  - "cd .. && jppm hubBuild \"yousan4k@gmail.com\" $AUTH"
